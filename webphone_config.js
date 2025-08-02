@@ -7,6 +7,20 @@
 */
 
 webphone_api.parameters = {
+	enginepriority_java: 0,
+	enginepriority_webrtc: 5,
+	enginepriority_ns: 0,
+	enginepriority_flash: 0,
+	enginepriority_app: 0,
+	enginepriority_p2p: 0,
+	enginepriority_accessnum: 0,
+	enginepriority_nativedial: 0,
+	enginepriority_otherbrowser: 0,
+
+	linnsengine: false,
+	macnsengine: false,
+	winlinmacnsengine: false,
+
 	serveraddress: 'iptel.org:5070',  //SET to your SIP server IP address, domain name or SRV DNS record (also set the :port if that is not the default 5060). Example: sip.myserveraddress.com:5070
 	proxyaddress: 'iptel.org:5070',   //Optional SIP proxy address. Specify only if you must use an outbound SIP proxy which is different from the above serveraddress. 
 	//webrtcserveraddress: '', //Optional websocket server URL if your VoIP server has WebRTC support. Example: wss://domain:8089/ws
