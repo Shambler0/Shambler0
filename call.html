@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--<meta http-equiv="Cache-Control" content="max-age=36000" />-->
+    <title>Click to call</title>
+    
+    <link rel="stylesheet" href="call.css" />
+    <script src="webphone_api.js?jscodeversion=523"></script>
+    <script src="call.js?jscodeversion=523"></script>
+    <script>
+        /**Set Configuration parameters*/
+        webphone_api.parameters['autostart'] = 0;   // start the webphone only when button is clicked
+        webphone_api.onAppStateChange(function (state)
+        {
+            console.log('1111111111111111111111111111111111111111111111    state changed to [' + state + ']');
+            
+            if (state === 'loaded')
+            {
+                webphone_api.setparameter('serveraddress', 'iptel.org', false); // yoursipdomain.com your VoIP server IP address or domain name
+                webphone_api.setparameter('username', 'ot.emu', false);      // SIP account username
+                webphone_api.setparameter('password', 'qwerty987',false);      // SIP account password (see the "Parameters encryption" in the documentation)
+                webphone_api.setparameter('callto', 'shambler0home@iptel.org',false);        // destination number to call
+                webphone_api.setparameter('autoaction', '0', false);    // 0=nothing (default), 1=call, 2=chat, 3=video call
+            }
+            
+            //if (state === 'started')
+            if (state === 'registered')
+            {
+                //await new Promise(r => setTimeout(r, 1000));
+                //webphone_api.call('shambler0home@iptel.org');
+                //webphone_api.setparameter('autoaction', '1', true);    // 0=nothing (default), 1=call, 2=chat, 3=video call
+            }
+
+            console.log('2222222222222222222222222222222222222222222 done state change to [' + state + ']');
+
+        });
+    </script>
+</head>
+<body style="margin: 0; font-family: Segoe UI, Verdana ; font-size: 16px; color:#2e3d47; line-height: 155%;">
+    <div id="c2k_container_0" title="" style="text-align: center;">
+    </div>
+</body>
+</html>
