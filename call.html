@@ -14,14 +14,12 @@
         webphone_api.parameters['autostart'] = 0;   // start the webphone only when button is clicked
         webphone_api.onAppStateChange(function (state)
         {
-            console.log('1111111111111111111111111111111111111111111111    state changed to [' + state + ']');
-            
             if (state === 'loaded')
             {
                 webphone_api.setparameter('serveraddress', 'iptel.org', false); // yoursipdomain.com your VoIP server IP address or domain name
                 webphone_api.setparameter('username', 'ot.emu', false);      // SIP account username
                 webphone_api.setparameter('password', 'qwerty987',false);      // SIP account password (see the "Parameters encryption" in the documentation)
-                webphone_api.setparameter('callto', 'shambler0home@iptel.org',false);        // destination number to call
+                webphone_api.setparameter('callto', 'emu@iptel.org',false);        // destination number to call
                 webphone_api.setparameter('autoaction', '0', false);    // 0=nothing (default), 1=call, 2=chat, 3=video call
             }
             
@@ -32,9 +30,6 @@
                 //webphone_api.call('shambler0home@iptel.org');
                 //webphone_api.setparameter('autoaction', '1', true);    // 0=nothing (default), 1=call, 2=chat, 3=video call
             }
-
-            console.log('2222222222222222222222222222222222222222222 done state change to [' + state + ']');
-
         });
     </script>
 </head>
